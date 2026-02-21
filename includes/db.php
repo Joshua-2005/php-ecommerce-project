@@ -1,13 +1,18 @@
 <?php
-$host = 'sql313.infinityfree.com';
-$dbname = 'if0_41188703_ecommerse';
-$user = 'if0_41188703';
-$password = 'Joshua2370';
+/*
+    DATABASE CONFIGURATION
+    Update these values before running locally.
+*/
+
+$host = "localhost";
+$dbname = "your_database_name";
+$user = "your_username";
+$password = "your_password";
 
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    die("Database connection failed.");
 }
 ?>
